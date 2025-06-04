@@ -40,6 +40,7 @@ jobs:
           template: classic
           base: header
           config_timezone: ${{ secrets.USER_TIMEZONE }}
+          repositories_skipped: jmarhee/jmarhee
   lines:
     runs-on: ubuntu-latest
     steps:
@@ -50,6 +51,7 @@ jobs:
           committer_token: ${{ secrets.TOKEN_GITHUB }}
           base: "repositories"
           plugin_lines: yes
+          repositories_skipped: jmarhee/jmarhee
 
   acti_comm:
     runs-on: ubuntu-latest
@@ -67,6 +69,7 @@ jobs:
           template: classic
           base: activity, community
           config_timezone: ${{ secrets.USER_TIMEZONE }}
+          repositories_skipped: jmarhee/jmarhee
 
   iso_calender:
     runs-on: ubuntu-latest
@@ -86,6 +89,7 @@ jobs:
           config_timezone: ${{ secrets.USER_TIMEZONE }}
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
+          repositories_skipped: jmarhee/jmarhee
 
   habits:
     runs-on: ubuntu-latest
@@ -104,7 +108,7 @@ jobs:
           plugin_habits_days: 14        # Keep only events from last 14 days
           plugin_habits_charts: yes     # Display charts section
           plugin_habits_trim: yes       # Trim unused hours on daily chart
-
+          repositories_skipped: jmarhee/jmarhee
   issue_pr_lang:
     runs-on: ubuntu-latest
     steps:
@@ -123,6 +127,7 @@ jobs:
           config_timezone: ${{ secrets.USER_TIMEZONE }}
           plugin_followup: yes
           plugin_languages: yes
+          repositories_skipped: jmarhee/jmarhee
 
 
   repositories:
@@ -141,3 +146,4 @@ jobs:
           template: classic
           base: repositories
           config_timezone: ${{ secrets.USER_TIMEZONE }}
+          repositories_skipped: jmarhee/jmarhee
